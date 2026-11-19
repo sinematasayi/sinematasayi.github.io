@@ -54,6 +54,7 @@
   --max-width:  90rem;                              /* 1440px */
   --gutter:     clamp(1rem, 0.5rem + 2vw, 2.5rem);  /* page side margin: 16px on phones */
   --column-gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  --nav-height: 3.5rem;                             /* 56px sticky bar */
 
   /* ---------- Details ---------- */
   --radius: 2px;                    /* restrained rounding */

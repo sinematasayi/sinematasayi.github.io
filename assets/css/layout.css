@@ -36,6 +36,101 @@ main > section {
   .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
 }
 
+/* When a nav link jumps to a section, stop just below the sticky bar
+   instead of hiding the section's top behind it */
+[id] { scroll-margin-top: var(--nav-height); }
+
+/* ---------- Nav (sticky top bar) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+.nav__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--space-1);
+  height: 100%;
+}
+
+.nav__list a {
+  /* Full bar height = big, easy tap target on phones */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-inline: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.nav__name:hover,
+.nav__list a:hover { color: var(--cobalt); }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  padding: 0.85em 1.25em;
+  border: 1px solid var(--cobalt);
+  border-radius: var(--radius);
+  background: var(--cobalt);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color var(--duration) var(--ease),
+              border-color var(--duration) var(--ease),
+              color var(--duration) var(--ease);
+}
+
+.button:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--cobalt);
+}
+
+.button--outline:hover {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--white);
+}
+
+/* The arrow nudges right on hover */
+.button span[aria-hidden] {
+  transition: transform var(--duration) var(--ease);
+}
+.button:hover span[aria-hidden] { transform: translateX(3px); }
+
 /* Thin divider line */
 .rule {
   border: 0;

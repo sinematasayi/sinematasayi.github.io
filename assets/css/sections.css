@@ -1,0 +1,140 @@
+/* =========================================================
+   SECTIONS — each section's own character
+   Mobile first: the plain rules are for phones; the
+   @media blocks add the wider layouts on top.
+   ========================================================= */
+
+
+/* =================== HERO =================== */
+
+.hero {
+  padding-block: var(--space-5) var(--section-space);
+  row-gap: var(--space-4);
+  align-content: end;
+}
+
+/* Everything spans the full width on phones */
+.hero > * { grid-column: 1 / -1; }
+
+.hero__mark {
+  justify-self: end;
+  width: clamp(4.5rem, 3rem + 10vw, 12rem);
+  margin-bottom: var(--space-2);
+  fill: none;
+  stroke: var(--cobalt);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.hero__mark line,
+.hero__mark circle { vector-effect: non-scaling-stroke; }
+.hero__mark-dot { fill: var(--cobalt); stroke: none; }
+
+.hero__title {
+  max-width: 14ch;   /* keeps the headline breaking into 2–3 strong lines */
+}
+
+.hero__sub {
+  font-size: var(--text-lg);
+  line-height: 1.45;
+  max-width: 38ch;
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Laptop and up: hero fills the first screen; sub-line left, buttons right */
+@media (min-width: 64em) {
+  .hero {
+    /* fill the first screen, but never taller than ~900px on big monitors */
+    min-height: min(calc(100svh - var(--nav-height)), 56rem);
+    padding-block-start: var(--space-6);
+    /* 3 rows: mark at the top · stretchy middle · sub-line + buttons */
+    grid-template-rows: auto 1fr auto;
+    align-content: stretch;
+  }
+
+  .hero__mark {
+    grid-column: 10 / -1;
+    grid-row: 1;
+    align-self: start;
+    margin-bottom: 0;
+  }
+
+  .hero__title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: end;   /* headline sits at the bottom of the middle row */
+  }
+
+  .hero__sub {
+    grid-column: 1 / span 7;
+    grid-row: 3;
+    margin-top: var(--space-4);
+  }
+
+  .hero__links {
+    grid-column: 9 / -1;
+    grid-row: 3;
+    justify-content: flex-end;
+    align-self: end;
+  }
+}
+
+
+/* =================== THE STORY =================== */
+
+.story {
+  border-top: var(--border);
+  row-gap: var(--space-5);
+}
+
+.story__aside,
+.story__chapters { grid-column: 1 / -1; }
+
+.story__label { color: var(--ink); }
+
+.chapter {
+  padding-block: var(--space-5);
+  border-top: var(--border);
+}
+.chapter:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.chapter:last-child { padding-bottom: 0; }
+
+.chapter__title {
+  font-size: var(--text-xl);
+  line-height: 1.1;
+  margin-bottom: var(--space-3);
+}
+
+.chapter p {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.chapter p + p { margin-top: var(--space-2); }
+
+/* "Where I am now": short stacked lines, read like a list of intentions */
+.chapter--lines p + p { margin-top: var(--space-1); }
+
+/* Tablet: label left, chapters right */
+@media (min-width: 40em) {
+  .story__aside    { grid-column: 1 / span 2; }
+  .story__chapters { grid-column: 3 / -1; }
+}
+
+/* Laptop: narrow label column that stays in view while chapters scroll */
+@media (min-width: 64em) {
+  .story__aside    { grid-column: 1 / span 3; }
+  .story__chapters { grid-column: 5 / span 7; }
+
+  .story__label {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-4));
+  }
+}

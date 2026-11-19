@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
 </head>
 <body>
 
@@ -45,7 +46,14 @@
   <main id="content">
 
     <!-- ===================== HERO ===================== -->
-    <section class="hero" id="top">
+    <section class="hero grid" id="top">
+      <!-- Decorative mark: circle + crosshair. aria-hidden = screen readers skip it -->
+      <svg class="hero__mark" aria-hidden="true" focusable="false" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="44" />
+        <circle cx="60" cy="60" r="2.5" class="hero__mark-dot" />
+        <line x1="0" y1="60" x2="120" y2="60" />
+        <line x1="60" y1="0" x2="60" y2="120" />
+      </svg>
       <h1 class="hero__title">Redefining the game of life.</h1>
       <p class="hero__sub">Building and scaling GTM engines in high-growth tech, across marketing, sales, B2B and D2C. Now automating my own job, so they can run without me.</p>
       <p class="hero__links">
@@ -55,8 +63,12 @@
     </section>
 
     <!-- ===================== THE STORY ===================== -->
-    <section class="story" id="story" aria-labelledby="story-title">
-      <h2 class="label" id="story-title">The Story</h2>
+    <section class="story grid" id="story" aria-labelledby="story-title">
+      <div class="story__aside">
+        <h2 class="label story__label" id="story-title">The Story</h2>
+      </div>
+
+      <div class="story__chapters">
 
       <article class="chapter">
         <h3 class="chapter__title">Where I come from</h3>
@@ -73,7 +85,7 @@
         <p>Nothing has shaped my raison d'être quite like grief. Having to accept the brutality of "never again" taught me how deeply the good and the bad can coexist. It changed my perspective on time, priorities and what it means to <strong>actually</strong> live. And it introduced me to a kind of loneliness I hadn't known before.</p>
       </article>
 
-      <article class="chapter">
+      <article class="chapter chapter--lines">
         <h3 class="chapter__title">Where I am now</h3>
         <p>Back to the essentials of being human.</p>
         <p>On the hunt for offline pleasures.</p>
@@ -81,6 +93,7 @@
         <p>Balancing my business drive with my emotional cravings.</p>
         <p>Embracing being a multipotentialite instead of squeezing myself into a niche.</p>
       </article>
+      </div>
     </section>
 
     <!-- ===================== 01 / THE MAIN PROJECT ===================== -->
