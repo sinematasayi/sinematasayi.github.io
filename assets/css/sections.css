@@ -84,6 +84,79 @@
 }
 
 
+/* =================== SHARED: numbered sections 01–04 ===================
+   Every numbered section uses the same building blocks:
+   .section__head (label + headline), .section__body (text),
+   .section__cta (the button). This keeps them consistent. */
+
+.section {
+  border-top: var(--border);
+  row-gap: var(--space-6);
+  align-items: start;
+}
+
+.section > * { grid-column: 1 / -1; }
+
+.section__head .label { margin-bottom: var(--space-3); }
+.section__head h2     { max-width: 16ch; }
+
+.section__body p + p { margin-top: var(--space-2); }
+
+/* Larger opening line, e.g. the question in 01 */
+.lede {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  text-wrap: balance;   /* evens out the lines, no lonely last words */
+}
+.section__body .lede { margin-bottom: var(--space-4); }
+
+/* (written this way so it beats the "p + p" spacing rule above) */
+.section__body p.section__cta { margin-top: var(--space-5); }
+
+
+/* =================== 01 — THE MAIN PROJECT =================== */
+
+/* Graph-paper background: two sets of 1px lines, every 32px.
+   ("linear-gradient" here only draws sharp lines — nothing fades.) */
+.section--project {
+  background-color: var(--white);
+  background-image:
+    linear-gradient(to right,  var(--rule) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+.project__diagram {
+  max-width: 30rem;
+  background: var(--white);   /* keeps the drawing clean against the grid */
+}
+
+.project__diagram svg { width: 100%; }
+
+/* Diagram styles: thin ink lines, white nodes, one cobalt "engine" */
+.project__diagram * { vector-effect: non-scaling-stroke; }
+.d-frame rect  { fill: none; stroke: var(--rule); stroke-width: 1; }
+.d-cross       { fill: none; stroke: var(--ink); stroke-width: 1; }
+.d-line        { fill: none; stroke: var(--ink); stroke-width: 1; }
+.d-node        { fill: var(--white); stroke: var(--ink); stroke-width: 1; }
+.d-joint       { fill: var(--ink); }
+.d-engine      { fill: var(--cobalt); }
+.d-engine-dot  { fill: var(--white); }
+.d-out         { fill: var(--white); stroke: var(--cobalt); stroke-width: 1.5; }
+
+/* Laptop: text left, diagram right */
+@media (min-width: 64em) {
+  .section--project .section__head    { grid-column: 1 / span 9; }
+  .section--project .section__body    { grid-column: 1 / span 6; grid-row: 2; }
+  .section--project .project__diagram { grid-column: 8 / -1;     grid-row: 2; justify-self: end; width: 100%; }
+}
+
+
 /* =================== THE STORY =================== */
 
 .story {

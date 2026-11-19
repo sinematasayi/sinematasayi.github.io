@@ -97,15 +97,47 @@
     </section>
 
     <!-- ===================== 01 / THE MAIN PROJECT ===================== -->
-    <section class="section section--project" id="main-project" aria-labelledby="project-title">
-      <p class="label"><span class="label__num">01</span> / The Main Project</p>
-      <h2 id="project-title">On a mission to automate my own GTM job.</h2>
-      <p class="lede">What if the work that once filled my days could run on its own?</p>
-      <p><strong>I'm making myself redundant before another employer does</strong>, and building my GTM engineering toolkit in public.</p>
-      <p>From outbound automation to AI-powered SEO, I'm exploring how AI can take repetitive GTM work off our plates and make businesses more effective.</p>
-      <p>Whether you're an early-stage founder looking to automate your own GTM processes or a professional looking to upskill and become an AI-enabled GTM or marketing operator, there's something for you in my growing library of practical use cases.</p>
-      <!-- TODO (Milestone 4): unlabelled node-and-line diagram (visual only) -->
-      <p><a class="button" href="https://github.com/sinematasayi/gtm-library">Explore the GTM library on GitHub <span aria-hidden="true">→</span></a></p>
+    <section class="section section--project grid" id="main-project" aria-labelledby="project-title">
+      <div class="section__head">
+        <p class="label"><span class="label__num">01</span> / The Main Project</p>
+        <h2 id="project-title">On a mission to automate my own GTM job.</h2>
+      </div>
+
+      <!-- Decorative systems diagram: inputs → engine → outputs. No labels, no claims. -->
+      <div class="project__diagram" aria-hidden="true">
+        <svg viewBox="0 0 480 360" focusable="false">
+          <!-- frame with corner crosshairs -->
+          <g class="d-frame">
+            <rect x="12" y="12" width="456" height="336" />
+            <path d="M12 2v20M2 12h20  M468 2v20M458 12h20  M12 338v20M2 348h20  M468 338v20M458 348h20" class="d-cross" />
+          </g>
+          <!-- connectors -->
+          <path class="d-line" d="M84 72H128V180H180  M84 180H180  M84 288H128V180H180" />
+          <path class="d-line" d="M252 180H396  M324 180V90H396  M324 180V270H396" />
+          <!-- inputs -->
+          <rect class="d-node" x="60" y="60" width="24" height="24" />
+          <rect class="d-node" x="60" y="168" width="24" height="24" />
+          <rect class="d-node" x="60" y="276" width="24" height="24" />
+          <!-- engine -->
+          <rect class="d-engine" x="180" y="144" width="72" height="72" />
+          <circle class="d-engine-dot" cx="216" cy="180" r="6" />
+          <!-- junction points -->
+          <circle class="d-joint" cx="128" cy="180" r="3" />
+          <circle class="d-joint" cx="324" cy="180" r="3" />
+          <!-- outputs -->
+          <circle class="d-out" cx="408" cy="90" r="12" />
+          <circle class="d-out" cx="408" cy="180" r="12" />
+          <circle class="d-out" cx="408" cy="270" r="12" />
+        </svg>
+      </div>
+
+      <div class="section__body">
+        <p class="lede">What if the work that once filled my days could run on its own?</p>
+        <p><strong>I'm making myself redundant before another employer does</strong>, and building my GTM engineering toolkit in public.</p>
+        <p>From outbound automation to AI-powered SEO, I'm exploring how AI can take repetitive GTM work off our plates and make businesses more effective.</p>
+        <p>Whether you're an early-stage founder looking to automate your own GTM processes or a professional looking to upskill and become an AI-enabled GTM or marketing operator, there's something for you in my growing library of practical use cases.</p>
+        <p class="section__cta"><a class="button" href="https://github.com/sinematasayi/gtm-library">Explore the GTM library on GitHub <span aria-hidden="true">→</span></a></p>
+      </div>
     </section>
 
     <!-- ===================== 02 / THE ESSAYS ===================== -->
