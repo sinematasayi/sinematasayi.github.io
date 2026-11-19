@@ -1,0 +1,44 @@
+/* =========================================================
+   LAYOUT — page frame and grid
+   ========================================================= */
+
+/* ---------- Page frame ----------
+   Sections stretch edge to edge (so a background colour or grid
+   pattern can fill the full width), while their content stays
+   within --max-width and keeps a side margin of --gutter.
+   The max() picks whichever is larger: the normal side margin,
+   or the extra space needed to centre content on wide screens. */
+.site-header,
+main > section,
+.site-footer {
+  padding-inline: max(var(--gutter), calc((100% - var(--max-width)) / 2 + var(--gutter)));
+}
+
+main > section {
+  padding-block: var(--section-space);
+}
+
+/* ---------- 12-column grid ----------
+   4 columns on phones, 6 on tablets, 12 on laptops and up.
+   Use with e.g.  <div class="grid">  and place children with
+   grid-column, e.g.  grid-column: 1 / span 6;  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--column-gap);
+}
+
+@media (min-width: 40em) {   /* 640px and wider */
+  .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 64em) {   /* 1024px and wider */
+  .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+
+/* Thin divider line */
+.rule {
+  border: 0;
+  border-top: var(--border);
+  margin: 0;
+}
