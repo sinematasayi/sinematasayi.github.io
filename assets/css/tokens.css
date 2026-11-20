@@ -10,7 +10,8 @@
   --ink:       #111111;  /* text and headlines */
   --ink-muted: #5C5C5C;  /* small secondary text (6.7:1 on white, 5.7:1 on cream) */
   --cobalt:    #0F52BB;  /* links, section numbers, buttons, selected words */
-  --cream:     #F7EDD3;  /* warm highlight panels — use sparingly */
+  --cream:     #F7EDD3;  /* brand butter cream — use sparingly */
+  --butter:    #FDFAF4;  /* very light tint of --cream (25% cream + 75% white), in reserve */
   --rule:      #E8E8E8;  /* thin dividers only, never text */
 
   /* ---------- Font families ----------
@@ -25,9 +26,9 @@
      screen width ("vw" = 1% of the window width) but never beyond the limits. */
   --text-xs:      0.75rem;                                    /* 12px  labels */
   --text-sm:      0.875rem;                                   /* 14px  small print */
-  --text-base:    clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem); /* 17–19px body */
-  --text-lg:      clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);     /* 20–24px */
-  --text-xl:      clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);    /* 28–44px */
+  --text-base:    clamp(1rem, 0.96rem + 0.12vw, 1.0625rem);    /* 16–17px body */
+  --text-lg:      clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);  /* 18–20px lead / subtitles */
+  --text-xl:      clamp(1.5rem, 1.3rem + 0.8vw, 2rem);        /* 24–32px chapter titles */
   --text-2xl:     clamp(2.5rem, 1.8rem + 3.5vw, 5rem);        /* 40–80px section headlines */
   --text-display: clamp(3rem, 1.5rem + 7.5vw, 9.5rem);        /* 48–152px hero */
 
