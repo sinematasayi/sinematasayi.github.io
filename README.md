@@ -15,8 +15,8 @@ sinematasayi.github.io/
 ├── CLAUDE.md             ← safety rules for working on this repo (not on the website)
 └── docs/                 ← THE WEBSITE: everything in here is published
     ├── index.html            ← the home page: all text, sections and links
-    ├── impressum.html        ← legal notice (German)
-    ├── datenschutz.html      ← privacy policy (German)
+    ├── legal-notice.html     ← Legal Notice (Impressum)
+    ├── privacy-policy.html   ← Privacy Policy
     ├── 404.html              ← "Oups" page shown for addresses that don't exist
     ├── favicon.ico           ← tab icon for older browsers
     ├── CNAME                 ← tells GitHub Pages to use sinematasayi.com
@@ -27,7 +27,7 @@ sinematasayi.github.io/
         │   ├── base.css      ← font loading and default text styles
         │   ├── layout.css    ← page frame, grid, nav, buttons, footer
         │   ├── sections.css  ← hero, the five pillars, story, closing
-        │   └── legal.css     ← Impressum and Datenschutz pages
+        │   └── legal.css     ← Legal Notice and Privacy Policy pages
         ├── fonts/            ← self-hosted fonts + their licences
         ├── icons/            ← favicon.svg, apple-touch-icon.png ("SA." mark)
         └── images/
@@ -66,7 +66,7 @@ Starting the server inside `docs/` matters: the site expects `docs/` to be its t
 | Change a colour, text size or spacing | `docs/assets/css/tokens.css` | Named values like `--cobalt` or `--text-base`. Change once, updates everywhere. |
 | Change how a section looks | `docs/assets/css/sections.css` | Blocks marked `HERO`, `THE STORY`, `THE FIVE PILLARS`, `CLOSING`. |
 | Change the nav, buttons or footer | `docs/assets/css/layout.css` | Blocks marked `Nav`, `Buttons`, `Footer`. |
-| Update the Impressum or privacy policy | `docs/impressum.html`, `docs/datenschutz.html` | The text sits between the `<main>` tags. |
+| Update the Legal Notice or Privacy Policy | `docs/legal-notice.html`, `docs/privacy-policy.html` | The text sits between the `<main>` tags. |
 | Change the tab icon | `docs/assets/icons/` + `docs/favicon.ico` | Replace the files, keeping the same names. |
 | Change the link preview image | `docs/assets/images/og-image.png` | Replace with a new 1200 × 630 image, same name. |
 
@@ -129,7 +129,7 @@ I work on the branch `build-v1` and publish by sending it to `main`, which is wh
 
 The privacy policy says this site uses **no cookies, no tracking and no third-party content**. Everything (fonts, icons, images) is hosted here, so visitors' browsers only ever talk to this site.
 
-**Before adding** analytics, embedded videos or posts (YouTube, Instagram, Substack), external fonts, or any script from another site: don't, or update `docs/datenschutz.html` first.
+**Before adding** analytics, embedded videos or posts (YouTube, Instagram, Substack), external fonts, or any script from another site: don't, or update `docs/privacy-policy.html` first.
 
 Links that visitors click (GitHub, Substack, Instagram, LinkedIn) are fine; the privacy policy covers them.
 
