@@ -1,6 +1,6 @@
 # sinematasayi.github.io
 
-My one-page personal website, hosted free on GitHub Pages at https://sinematasayi.github.io.
+My one-page personal website, hosted free on GitHub Pages at https://sinematasayi.com.
 
 ## Safety rules — this repo is public
 1. Never write API keys, tokens or passwords into any file.
